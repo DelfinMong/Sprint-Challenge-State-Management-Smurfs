@@ -11,7 +11,7 @@ const SmurfForm = ( ) => {
         id: ""
       });
    
-   const { smurfList, setSmurfList } =  useContext(FormContext);
+   const { setSmurfList } =  useContext(FormContext);
 
    const handleChanges = event => {
     setFormValue({ ...formValue, [event.target.name]: event.target.value });
@@ -38,10 +38,13 @@ const SmurfForm = ( ) => {
 
    return (
         <form onSubmit={newSmurf}>
-            <input type="text"  name='name' value= {formValue.name} placeholder="Name" onChange={handleChanges}/>
-            <input type="text" name= 'age' value={formValue.age} placeholder="83" onChange={handleChanges}/>
-            <input type="text" name= 'height' value={formValue.height} placeholder=" 6 feet" onChange={handleChanges}/>
-            <button type="submit">New Smurf</button>
+            <input type="text" className='pa3 ba b--green bg-lightest-blue'
+             name='name' value= {formValue.name} placeholder="Name" onChange={handleChanges}/>
+            <input type="text" className='pa3 ba b--green bg-lightest-blue'
+            name= 'age' value={formValue.age} placeholder="83" onChange={handleChanges}/>
+            <input type="text" className='pa3 ba b--green bg-lightest-blue'
+            name= 'height' value={formValue.height} placeholder=" 6 feet" onChange={handleChanges}/>
+            <button className='pa3 ba b--green bg-lightest-blue' type="submit">New Smurf</button>
         </form>
     )
 }
